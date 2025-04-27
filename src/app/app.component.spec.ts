@@ -1,15 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { PlantaListComponent } from './planta/planta-list/planta-list.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterModule.forRoot([])
+        RouterModule.forRoot([]),
+        HttpClientTestingModule 
       ],
       declarations: [
-        AppComponent
+        AppComponent, PlantaListComponent
       ],
     }).compileComponents();
   });
@@ -30,6 +33,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, vivero');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Vivero El Otoño');
   });
 });
